@@ -1,0 +1,53 @@
+\specsection{2.11 Сформулировать определение математического ожидания для дискретной и непрерывнойслучайных величин. Механический смысл математического ожидания. Доказать свойстваматематического ожидания. Записать формулы для вычисления математического ожиданияфункции случайной величины и случайного вектора.}
+
+\OPR Мат. ожиданием (средним значением) дискр. сл. вел. $X$ наз. число $M[X]=\suml_{i\in I}x_i p_i$
+
+\OPR Математическим ожиданием непр. сл. вел. $X$ наз. число $M[X]=\intl_{-\infty}^{+\infty}xf(x)dx$
+
+Механический смысл мат. ожидания: дискр. сл. вел. $X$ можно интерпретировать как систему точек $x_1,x_2,...$ на прямой, масса точки $x_i$ равна $p_i$. 
+
+Т.к. $\suml_{i}p_i = 1$, то $MX$ характеризует положение центра тяжести вероятностной массы.
+
+Свойства математического ожидания
+\begin{enumerate}[topsep=0pt, leftmargin=20pt, noitemsep, label=\arabic*\degree]
+	\item Если $P\{X=x_0\}=1$ (т.е. если $X$ фактически не явл. случ.), то $MX=x_0$
+	\begin{tabular}{ |c|c| } 
+		\hline
+		$X$ & $x_0$ \\ \hline
+		$P$ & 1 \\ \hline
+	\end{tabular}
+	
+	\item $M[aX+b]=a\cdot MX+b$ ~~~ 3\degree~~$X[X_1+X_2]=MX_1+MX_2$
+	
+	\setcounter{enumi}{3}
+		
+	\item Если $X_1$ и $X_2$ -- независимы, то $M[X_1X_2]=MX_1\cdot MX_2$
+	
+	\item [] Доказательства
+	\setcounter{enumi}{0}
+	
+	\item По определению: $MX=\suml_{i=1}p_i x_i=1\cdot x_0=x_0$
+	
+	\item док. для непрерывной сл. вел.: $M[aX+b]=|\varphi(x)=ax+b|=\intl_{\R}(ax+b)f(x)dx=$
+	\item [] $= a\underbrace{\intl_{\R}xf(x)dx}_{MX}+b\underbrace{\intl_{\R}f(x)dx}_{1}=aM[X]+b$
+	
+	\item док. для дискретной сл. вел.: $M[X_1+X_2]=|\varphi(x_1,x_2)=x_1+x_2|=\suml_{i}\suml_{j}(x_{1,i}+x_{2,j})p_{ij}=$
+	\item [] $=\suml_{i}\suml_{j}x_{1,i}p_{ij}+\suml_{i}\suml_{j}x_{2,j}p_{ij}
+	=\suml_{i}x_{1,i}\underbrace{\suml_{j}p_{ij}}_{P\{X_1=X_{1,i}\}}+\suml_{j}x_{2,j}\underbrace{\suml_{i}p_{ij}}_{P\{X_2=X_{2,j}\}} = MX_1+MX_2$
+
+	\item док. для непрерывной сл. вел.:
+	\item [] $M[X_1X_2]=|\varphi(x_1,x_2)=x_1x_2|=\iintl_{R^2}x_1x_2f(x_1,x_2)dx_1dx_2=$
+	\item [] $= \intl_{-\infty}^{+\infty}dx_1\intl_{-\infty}^{+\infty}x_1x_2f_{X_1}(x_1)f_{X_2}(x_2)dx_2=\intl_{-\infty}^{+\infty}x_1f_{X_1}(x_1)dx_1\intl_{-\infty}^{+\infty}x_2f_{X_2}(x_2)dx_2=MX_1\cdot MX_2$
+\end{enumerate}
+
+\ZAM 1. Пусть $X$ -- сл. вел., $\varphi:\R\rightarrow\R$ -- нек. ф-ия. $Y=\varphi(X).$
+
+$MY=M[\varphi(x)]=\suml_{i\in I}\varphi(x_i)p_i$ (дискретная) $MY=M[\varphi(x)]=\intl_{-\infty}^{+\infty}\varphi(x)f(x)dx$ (непрерыв.)
+
+\ZAM 2. Если $\overrightarrow{X}=(X_1,X_2)$ -- сл. вектор., $\varphi:\R^2\rightarrow\R, Y=\varphi(X_1,X_2)$, то
+
+$MY=\suml_{i,j}\varphi(x_{1i},x_{2j})p_{ij}$, где $ p_{ij}=P\{X_1,X_2\}=(x_{1i},x_{2j})$ если $\overrightarrow{X}$ дискретный сл. вектор
+
+$MY=\iintl_{R^2}\varphi(x_1,x_2)f(x_1,x_2)dx_1dx_2$ если $\overrightarrow{X}$ -- непрерывный сл. вектор
+
+\clearpage

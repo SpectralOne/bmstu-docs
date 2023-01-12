@@ -1,0 +1,57 @@
+\specsection{1.5 Сформулировать определение условной вероятности. Доказать, что при фиксированном событии $B$
+условная вероятность $P(A|B)$ обладает всеми свойствами безусловной вероятности}
+
+Пусть $A$ и $B$ -- события, которые связаны с одним случайным экспериментом, 
+
+\OPR Пусть $P(B) > 0$, условной вероятностью события $A$ при условии, что произошло событие $B$, наз. число $P(A|B)=\tfrac{P(AB)}{P(B)}$
+
+Зафиксируем событие $B$ ($P(B) > 0$) и будем рассматривать усл. вер-ть $P(A|B)$ как ф-ию события $A$
+
+\THRM Условная вер-ть удовлетворяет всем аксиомам безусловной вер-ти:
+\begin{enumerate}[topsep=0pt, leftmargin=20pt, noitemsep, label=\arabic*\degree]
+	\item $P(A|B) \geq 0$
+	
+	\item $P(\Omega|B) = 1$
+	
+	\item Для любого случайного набора попарно непересек. событ $A_1,...,A_n$ 
+	\item [] имеет место $P(A_1 + ... + A_n +.. |B)= P(A_1|B)+...+P(A_n|B)+...$
+	
+	\item [] Доказательства
+	
+	\setcounter{enumi}{0}
+	
+	\item $P(A|B) = \tfrac{P(AB)^{\geq 0}}{P(B)_{> 0}} \geq 0$
+	
+	\item $P(\Omega | B) =\tfrac{P(\Omega B)}{P(B)}=\tfrac{P(B)}{P(B)}=1$
+	
+	\item $P(A_1+...+A_n+...|B) = \tfrac{P((A_1+...+A_n+...)|B)}{P(B)} =
+	\tfrac{P(A_1B+...+A_nB+...)}{P(B)}
+	\stackrel{\text{акс.}~3\degree}{=}$
+	
+	\item [] $ = \frac{1}{P(B)}(P(A_1B)+...+(P_nB)+...)=
+		\suml_{i=1}^{\infty}\tfrac{P(A_iB)}{P(B)}=
+		\suml_{i=1}^{\infty}P(A_i|B)$
+	
+\end{enumerate}
+
+\SLED Условная вер-ть обладает всеми св-вами безусловной вер-ти:
+\begin{enumerate}[topsep=0pt, leftmargin=20pt, noitemsep]
+	\item $P(\overline{A}|B) = 1 - P(A|B)$
+	
+	\item $P(\varnothing|B) = 0$
+	
+	\item Если $A_1\subseteq A_2$, то $P(A_1|B)\leq P(A_2|B)$
+	
+	\item $0\leq P(A|B) < 1$
+	
+	\item $P(A_1+A_2|B)=P(A_1|B)+P(A_2|B)-P(A_1A_2|B)$
+	
+	\item $P(A_1+...+A_n|B) = \suml_{1\leq i_1\leq n} P(A_{i1}|B)-\suml_{1\leq i_1<i_2\leq n}P(A_{i1}A_{i2}|B)+...+(-1)^{n+1}P(A_1...A_n|B)$
+	
+	\item [] Доказательство
+	
+	\item [] Свойства 1-6 для безусловной вер-ти явл. следствиями аксиом 1\degree-3\degree. Т.к. усл. вероятность удовлетворяет этим аксиомам, то для неё будут верны все следствия
+	
+\end{enumerate}
+
+\clearpage

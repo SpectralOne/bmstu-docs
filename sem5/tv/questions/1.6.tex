@@ -1,0 +1,33 @@
+\specsection{1.6 Сформулировать определение условной вероятности. Доказать теорему (формулу) умножения вероятностей. Привести пример использования этой формулы}
+
+\OPR Пусть $P(B) > 0$, условной вероятностью события $A$ при условии, что произошло событие $B$, наз. число $P(A|B)=\tfrac{P(AB)}{P(B)}$
+
+\THRM Пусть события $A_1...A_n$ таковы, что $P(A_1...A_{n-1})>0$. Тогда $P(A_1\cdot A_n) = P(A_1)\cdot P(A_2|A_1)\cdot P(A_3|A_1A_2)\cdot ... \cdot P(A_n|A_1...A_{n-1})$ -- формула умножения вероятностей (*)
+
+Доказательство:
+\begin{enumerate}[topsep=0pt, leftmargin=20pt, noitemsep]
+	\item  $\forall k \in \{1,...,n-1\}~A_1\cdot ... \cdot A_k \supseteq A_1\cdot ... \cdot A_{n-1}\Rightarrow P(A_1\cdot ... \cdot A_k)\geq P(A_1\cdot ... \cdot A_{n-1})> 0\Rightarrow$ все условные вероятности в формуле (*) определены
+	
+	\item $P(\underbrace{A_1\cdot...\cdot A_{n-1}}_{A}\cdot \underbrace{A_n}_{B}) = P(\underbrace{A_1\cdot...\cdot A_{n-2}}_{A} \cdot \underbrace{A_{n-1}}_{B})P(A_n|A_1\cdot...\cdot A_{n-1})= $
+	\item [] $= P(A_1\cdot...\cdot A_{n-2})P(A_{n-1}|A_1\cdot...\cdot A_{n-2})P(A_n|A_1...A_{n-1})=$
+	\item [] $=P(A_1)P(A_2|A_1)\cdot...\cdot P(A_n|A_1\cdot...\cdot A_{n-1})$\newline
+	
+\PRIM на 7 карточках написаны буквы слова ''ШОКОЛАД''. Карточки перемешивают и последовательно вынимают 3 карточки без возвращения. Какая вероятность, что эти три карточки в порядке появления образуют слово КОД
+
+$A = \{\text{карты образуют слово КОД}\}, ~~ P(A)-?$
+
+Решение
+
+$A_1 = \{\text{На 1 карточке написано К}\}$
+
+$A_2 = \{\text{На 2 карточке написано О}\}$
+
+$A_3 = \{\text{На 3 карточке написано Д}\}$
+
+Тогда $A=A_1A_2A_3$ -- по ф-ле условной вер-ти 
+
+$P(A) = P(A_1A_2A_3) = \underbrace{P(A_1)}_{\tfrac{1}{7}}\underbrace{P(A_2|A_1)}_{\tfrac{2}{6}}\underbrace{P(A_3|A_1A_2)}_{\tfrac{1}{5}} = \tfrac{1}{105}$
+
+\end{enumerate}
+
+\clearpage

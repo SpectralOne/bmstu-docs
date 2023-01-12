@@ -1,0 +1,68 @@
+\specsection{2.15 Сформулировать определение ковариации и коэффициента корреляции случайных величин.Сформулировать свойства коэффициента корреляции. Сформулировать определения независимыхи некоррелированных случайных величин, указать связь между этими свойствами. Понятияковариационной и корреляционной матриц. Записать свойства ковариационной матрицы.}
+
+\OPR Ковариацией случайных величин$X$ и$Y$ называется число 
+
+$\covxy=M[(X-m_X)(Y-m_Y)]$, где $m_X=MX,~m_Y=MY$
+
+Свойства ковариации
+\begin{enumerate}[topsep=0pt, leftmargin=20pt, noitemsep, label=\arabic*\degree]
+	\item $D(X+Y)=DX+DY+2\covxy$
+	
+	\item $\cov(X,X)=DX$
+	
+	\item Если $X,Y$ -- независимые, то $\covxy=0$
+	
+	\item $\cov(a_1X+a_2,b_1Y+b_2)=a_1b_1\covxy$
+	
+	\item $|\covxy|\leq\sqrt{DX\cdot DY}$, причём 
+	\item [] $|\covxy|=\sqrt{DX\cdot DY}\Leftrightarrow \exists\exists a,b\in\R, Y=aX+b$
+	
+	\item $\covxy=M[XY]-MX\cdot MY$
+\end{enumerate}
+
+\OPR Коэфф-ом корреляции сл. вел. $X$ и $Y$ наз. число $\rho(X,Y)=\tfrac{\covxy}{\sqrt{DX\cdot DY}},DX\cdot DY >0$
+
+Свойства корреляции
+\begin{enumerate}[topsep=0pt, leftmargin=20pt, noitemsep, label=\arabic*\degree]
+	\item $\rho(X,X)=1$ ~~~ 2\degree~ Если $X,Y$ нез., то $\rho(X,Y)=0$
+	
+	\setcounter{enumi}{2}
+	
+	\item $\rho(a_1X+b_1,a_2Y+b_2)\pm\rho(X,Y)$~~ $+$ если $a_1a_2>0$ и $-$ если $a_1a_2<0$
+	
+	\item $\cov(a_1X+a_2,b_1Y+b_2)=a_1b_1\covxy$
+	
+	\item $|\rho(X,Y)|\leq 1$, причём $\rho(X,Y)=
+	\begin{cases}
+		1, & \text{когда } Y=aX+b,~a>0\\
+		-1, & \text{когда } Y=aX+b,~a<0
+	\end{cases}$
+\end{enumerate}
+
+\OPR Сл. вел. \XY наз. \B{независимыми}, если $F(x,y)=F_X(x)F_Y(y)$, где $F$ -- совместная ф-ия распред. в-ра $(X,Y)$, $F_X,F_Y$-- маргинальные ф-ии распред. \XY
+
+\OPR Cл. вел. \XY наз. \B{некоррелированными}, если $\covxy=0$
+
+\ZAM $X,Y$ -- независимы $\stackrel{3\degree}{\Rightarrow}$ некоррелированы. Обратное неверно
+
+Пусть $\overrightarrow{X}=(X_1,...,X_n)$ -- $n$-мерный сл. вектор
+
+\OPR Ковариационной матрицей в-ра $\overrightarrow{X}$ наз. матрица $\sum_{\overrightarrow{X}}=(\sigma_{ij})_{i,j=\overline{1,n}},~\sigma_{ij}=\cov(X_i,X_j)$
+
+Свойства ковариационной матрицы
+\begin{enumerate}[topsep=0pt, leftmargin=20pt, noitemsep, label=\arabic*\degree]
+	\item $\sigma_{ii}=DX_i$
+	
+	\item $\sum_{\overrightarrow{X}}=\sum^T_{\overrightarrow{X}}$
+	
+	\item Пусть $\overrightarrow{Y}=(Y_1,...,Y_m), \overrightarrow{X}=(X_1,...,X_n), B\in M_{n,m}(\R)$, т.е. $\overrightarrow{Y}$ линейная ф-ия от $\overrightarrow{X}$
+	\item [] Тогда $\sum_{\overrightarrow{Y}}=B^T\sum_{\overrightarrow{X}}B$
+	
+	\item Матрица $\sum_{\overrightarrow{X}}$ явл. неотриц. определённой, т.е. $\forall \overrightarrow{b}\in\R^\omega~\overrightarrow{b}^T\sum_{\overrightarrow{X}}\overrightarrow{b}\geq 0$
+	
+	\item Если все компоненты в-ра$\overrightarrow{X}$ попарно независимы, то$\sum_{\overrightarrow{X}}$ -- диагональнаяматрица
+\end{enumerate}
+
+\OPR Корреляционной матрицей в-ра $\overrightarrow{X}$ наз. матрица $P=(\rho_{ij})_{i,j=\overline{1,n}}, ~\rho_{ij}=\rho(X_i,X_j)$
+
+\clearpage

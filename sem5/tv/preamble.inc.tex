@@ -1,0 +1,65 @@
+\usepackage{cmap}
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[english,russian]{babel}
+%\usepackage{pscyr} % Нормальные шрифты
+\usepackage{enumitem}
+\usepackage{array}
+\usepackage{amssymb,amsmath,amsthm}
+\usepackage{gensymb}
+\usepackage{verbatim}
+\usepackage{tikz}
+\usepackage{caption}
+\captionsetup{labelsep=endash}
+\captionsetup[figure]{name={Рисунок}}
+
+\usepackage[unicode,pdftex]{hyperref}
+\hypersetup{hidelinks}
+
+\usepackage{geometry}
+\geometry{left=8mm}
+\geometry{right=8mm}
+\geometry{top=8mm}
+\geometry{bottom=11mm}
+
+\usepackage{tocloft}
+\setlength{\cftsecindent}{0pt}
+\setlength{\cftsubsecindent}{0pt}
+
+\usepackage{titlesec}
+\titleformat{\section}
+	{\normalsize\bfseries}
+	{\thesection}
+	{1em}{}
+\titlespacing*{\chapter}{0pt}{-30pt}{8pt}
+\titlespacing*{\section}{\parindent}{*1}{*1}
+
+\setlength{\parindent}{0pt} 
+\usepackage{setspace}
+\onehalfspacing % Полуторный интервал
+\frenchspacing
+
+\usepackage{titlesec}
+\titleformat{\chapter}{\LARGE\bfseries}{\thechapter}{10pt}{\LARGE\bfseries}
+\titleformat{\section}{\normalsize\bfseries}{\thesection}{10pt}{\normalsize\bfseries}
+
+\newcommand{\intl}{\int\limits}
+\newcommand{\iintl}{\iint\limits}
+\newcommand{\suml}{\sum\limits}
+\newcommand{\liml}{\lim\limits}
+\newcommand{\toinf}[2][]{#2\rightarrow#1\infty}
+\newcommand{\OPR}{\textbf{Опр.~}}
+\newcommand{\PRIM}{\textbf{Прим.~}}
+\newcommand{\ZAM}{\textbf{Замеч.~}}
+\newcommand{\B}[1]{\textbf{#1}}
+\newcommand{\THRM}{\textbf{Th.~}}
+\newcommand{\SLED}{\textbf{Следствие~}}
+\newcommand{\specsection}[1]{\section*{#1}\addcontentsline{toc}{subsection}{#1}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\fforall}{\forall\forall}
+\newcommand{\DOST}{\B{Достаточность ($\Leftarrow$)}}
+\newcommand{\NEOB}{\B{Необходимость ($\Rightarrow$)}}
+\newcommand{\dd}[1]{\delta #1}
+\newcommand{\cov}{cov}
+\newcommand{\covxy}{\cov(X,Y)}
+\newcommand{\XY}{ $X$ и $Y$ }

@@ -1,0 +1,64 @@
+\specsection{2.14 Сформулировать определение ковариации и записать формулы для ее вычисления в случае дискретного и непрерывного случайных векторов. Доказать свойства ковариации.}
+
+Ковариация является характеристикой случайного вектора.
+
+\OPR Ковариацией случайных величин
+$X$ и
+$Y$ называется число 
+
+$\covxy=M[(X-m_X)(Y-m_Y)]$, где $m_X=MX,~m_Y=MY$
+
+\ZAM 1. если дискретный сл. вектор: 
+$\covxy=\suml_{i,j}(x_i-m_X)(y_j-m_Y)p_{ij}$
+
+\ZAM 2. если непрерывный сл. вектор:
+$\covxy=\iintl_{R^2}(x-m_X)(y-m_Y)f(x,y)dxdy$
+
+Свойства ковариации
+\begin{enumerate}[topsep=0pt, leftmargin=20pt, noitemsep, label=\arabic*\degree]
+	\item $D(X+Y)=DX+DY+2\covxy$
+	
+	\item $\cov(X,X)=DX$
+	
+	\item Если $X,Y$ -- независимые, то $\covxy=0$
+	
+	\item $\cov(a_1X+a_2,b_1Y+b_2)=a_1b_1\covxy$
+	
+	\item $|\covxy|\leq\sqrt{DX\cdot DY}$, причём 
+	\item [] $|\covxy|=\sqrt{DX\cdot DY}\Leftrightarrow \exists\exists a,b\in\R, Y=aX+b$
+	
+	\item $\covxy=M[XY]-MX\cdot MY$
+	
+	\item [] Доказательства
+	\setcounter{enumi}{0}
+	
+	\item $D(X+Y)=M[((X+Y)-M(X+Y))^2]=M[((X-m_X)+(Y-m_Y))^2]=$
+	\item [] $M[(X-m_X)^2]+M[(Y-m_Y)^2]+2\underbrace{M[(X-m_X)(Y-m_Y)]}_{\covxy}=DX+DY+2\covxy$
+	
+	\item $\cov(X,X)=M[(X-m_X)(X-m_X)]=M[(x-m_X)^2]=DX$
+	
+	\item $\covxy=M[(X-m_X)(Y-m_Y)]=
+	\left|\begin{array}{l}
+		x,y-\text{нез.}\Rightarrow \\
+		m_X,m_Y-\text{нез.}
+	\end{array}\right|
+	=M[X-m_X]\cdot M[Y-m_Y]=0$
+	
+	\item $M[a_1X+a_2]=a_1m_X+a_2,~~M[b_1Y+b_2]=b_1m_Y+b_2$
+	\item [] $\cov(a_1X+a_2, b_1Y+b_2)=M[(a_1X+a_2-a_1m_X-a_2)(b_1Y+b_2-b_1m-Y-b_2)]=$
+	\item [] $=M[a_1(X-m_X)b_1(Y-m_Y)]=a_1b_1M[(X-m_X)(Y-m_Y)]=a_1b_1\covxy$
+	
+	\item Выберем произвольное число
+$t\in\R$. Рассмотрим сл. вел. $Z(t)=tX-Y$. Тогда:
+	\item [] $D[Z(t)]=D[tX-Y]\stackrel{1\degree}{=}D[tX]+DY-2t\covxy=t^2DX-2t\covxy +DY\geq 0$
+	\item [] Кв. 3хчлен отн. $t$, ветви параболы $\uparrow$ т.к. $DX>0$. или нет корней или 1 $\Rightarrow D\leq 0$
+	\item [] $D=4\cov^2(X,Y)-4DX\cdot DY\leq 0,~~|\covxy|\leq \sqrt{DX\cdot DY}$
+	\item [] \NEOB Если $|\covxy|=\sqrt{DX\cdot DY}\Rightarrow D=0\Rightarrow D[Z(t)]$ имеет 1 корень. обозначим $t=a\Rightarrow D[Z(a)]=0\Rightarrow Z(a)=aX-Y$ -- принимает единств. знач. с вер-ю 1, обозн. как $-b\Rightarrow Z(a)=aX-Y=-b\Rightarrow Y=aX+b$
+	\item [] \DOST 
+	\item [] Если $Y=aX+b\Rightarrow Z(a)=-b\Rightarrow D[Z(a)]=0\Rightarrow D=0\Rightarrow |\covxy|=\sqrt{DX\cdot DY}$
+	
+	\item $\covxy=M[(X-m_X)(Y-m_Y)]=M[XY-m_YX-m_XY+m_Xm_Y]=$
+	\item [] $=M[XY]-m_YMX-m_XMY+m_Xm_Y=M[XY]-m_Xm_Y$
+\end{enumerate}
+
+\clearpage

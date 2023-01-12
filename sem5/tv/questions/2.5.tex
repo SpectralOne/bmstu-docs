@@ -1,0 +1,69 @@
+\specsection{2.5 Сформулировать определение случайного вектора и функции распределения вероятностейслучайного вектора. Сформулировать свойства функции распределения двумерного случайноговектора. Доказать формулу для вычисления $P \{a_1 \leq X < b_1 , a_2 \leq Y < b_2 \}$.}
+
+Пусть $(\Omega, \beta, P)$ -- вероятностное пространство
+
+$x_1(\omega),...,x_n(\omega)$ - сл. вел. заданные на этом пространстве
+
+\OPR $n$-мерным случ. вектором наз. кортеж $\overrightarrow{x} = (x_1(\omega),...,x_n(\omega))$
+
+\OPR Ф-ей распределения $n$-мерного случ. вектора $(x_1,...,x_n)$ наз. отображение 
+
+$F:\R^n\rightarrow\R$, которое определено усл-м $F(x_1,...,x_n)=P\{X_1<x_1,...,X_n<x_n\}$
+
+Свойства двумерной функции распределения ($F(x,y)=P\{X<x, Y<y\}$)
+\begin{enumerate}[topsep=0pt, leftmargin=20pt, noitemsep, label=\arabic*\degree]
+	\item $0\leq F(x, y) \leq 1$
+	
+	\item при фикс. $x$ ф-ия $F(x, y)$ явл. неубыв. от $y$. при фикс. $y$ явл. неуб. от $x$
+	\item [] $F(x_2,y)\geq F(x_1,y)$, при $x_2>x_1$
+	\item [] $F(x,y_2)\geq F(x,y_1)$, при $y_2>y_1$
+		
+	\item $\liml_{\toinf[-]{x,y}}F(x, y) = 0$
+	
+	\item $\liml_{\toinf[+]{x,y}}F(x, y) = 1$
+	
+	\item $\liml_{\toinf[+]{y}}F(x,y)=F_{X}(x),~\liml_{\toinf[+]{x}}F(x,y)=F_{Y}(y)$
+		
+	\item $P\{a_1\leq x<b_1,~a_2\leq y<b_2\}=F(b_1,b_2)-F(a_1,b_2)-F(b_1,a_2)+F(a_1,a_2)$
+	
+	\item При фикс. $y, F(x,y)$, как ф-ия $x$ явл. непрерыв. слева во всех точках
+	\item [] При фикс. $x, F(x,y)$, как ф-ия $y$ явл. непрерыв. слева во всех точках
+\end{enumerate}
+
+Доказательство ($6\degree$)
+
+\begin{tikzpicture}
+	\draw[thick,->] (0,0) -- (7.7,0) node[anchor=north west] {$X$};
+	\draw[thick,->] (3,-1.5) -- (3,3.5) node[anchor=north west] {$Y$};
+	
+	\fill[blue,thick] (3,2) circle (2pt); % b_2
+	\node[above right] at (3,2) {$b_2$};
+	
+	\fill[blue,thick] (7,0) circle (2pt); % b_1
+	\node[above right] at (7,0) {$b_1$};
+
+	\fill[blue,thick] (1,0) circle (2pt); % a_1
+	\node[below left] at (1,0) {$a_1$};
+
+	\fill[blue,thick] (3,-1) circle (2pt); % a_2
+	\node[below right] at (3,-1) {$a_2$};
+
+	\draw[thick] (1,2) -- (1, -1);
+	\draw[thick] (1,-1) -- (7, -1);
+	\draw[thick,dashed] (1,2) -- (7, 2);
+	\draw[thick,dashed] (7,2) -- (7, -1);
+\end{tikzpicture}
+
+Найдём вер-ть попадания усл. вер. в точку $\{X<x, a_2\leq Y < b_2\}$
+
+По теореме сложения (события объединения несовместны):
+
+$\underbrace{P\{X<x, Y<b_2\}}_{F(x, b_2)}=\underbrace{P\{X<x,a_2\leq Y<b_2\}}_{F(x,b_2)-F(x,a_2)}+\underbrace{P\{X<x, Y<a_2\}}_{F(x, a_2)}$
+
+По формуле сложения (события объединения несовместны): 
+
+$\underbrace{P\{X<b_1,a_2\leq Y<b_2\}}_{F(b_1,b_2)-F(b_1,a_2)}=P\{a_1\leq X<b_1,a_2\leq Y<b_2\}+\underbrace{P\{X<a_1,a_2\leq Y<b_2\}}_{F(a_1,b_2)-F(a_1,a_2)}$
+
+Тогда $P\{a_1\leq x < b_1,a_2\leq y < b_2\}=F(b_1,b_2)-F(b_1,a_2)-F(a_1,b_2)+F(a_1,a_2)$
+
+\clearpage

@@ -1,0 +1,83 @@
+\specsection{1.3 Определение пространства элементарных исходов, примеры. Сформулировать определение сигма-алгебры событий. Доказать простейшие свойства сигма-алгебры. Сформулировать аксиоматическое определение вероятности.}
+
+\subsubsection*{1. Пространство событий. Сигма алгебра}
+
+\OPR Случайным экспериментом называется эксперимент, результат которого невозможно заранее предсказать.
+
+\OPR Каждый неделимый результат случ. экспер. называют элементарным исходом.
+
+\OPR Мн-во всех элементарных исходов случайной величины $\Omega$ называется пространством элементарных исходов.
+
+\PRIM
+\begin{enumerate}[topsep=0pt, leftmargin=18pt, noitemsep]
+	\item Бросаем монету. Возможные исходы: \texttt{O} или \texttt{P}.~~ $\Omega = \{\texttt{O},~\texttt{P}\}~~|\Omega|=2$
+	
+	\item Из колоды в 36 карт последовательно извлекают 2 карты.~~ 
+	$\Omega=\{(x_1,x_2):~x_1,x_2\in \{1,\dots,36\},~x_1\neq x_2\}$, $x_i$ -- 
+	номер карты при $i$-ом извлечении.~~$|\Omega|=36\cdot 35$
+\end{enumerate}
+
+В результате случайного эксперимента, проведённого однократно, обязательно реализуется один из элементарных исходов.
+
+\OPR (нестрогое) Событием (случайным событием) в рамках данного случайного эксперимента называется любое подмножество пространства элементарных исходов $\Omega$ этого эксперимента.
+
+Но у такого определения есть недостатки:
+\begin{enumerate}[topsep=0pt, leftmargin=18pt, noitemsep]
+	\item Данное определение не является логически безупречным в случае бесконечного пространства элементарных исходов.
+	\item С точки зрения здравого смысла, если $A$ и $B$ -- события, связанные с некоторым СЭ, то если известно, наступили ли эти события в результате СЭ, то должно быть известно, наступили ли $A+B$, $AB$ и тд. Это означает, что если $A$ и $B$ -- события, то $A+B$, $AB$ -- тоже события, то есть множество событий должно быть замкнуто относительно теоретико-множественных операций.
+\end{enumerate}
+
+Пусть 1) $\Omega$ -- пространство элементарных исходов некоторого СЭ 2) $\beta\neq\varnothing$ -- некоторый набор подмножеств в множестве $\Omega$
+
+\OPR $\beta$ наз. сигма-алгеброй, если
+
+1) $A\in\beta\Rightarrow\overline{A}\in\beta$ 
+
+2) $A_1,\dots,A_n,\dots~\in \beta\Rightarrow A_1+ ... +A_n+\dots~\in \beta$
+
+Свойства
+\begin{enumerate}[topsep=0pt, leftmargin=20pt, noitemsep, label=\arabic*\degree]
+	\item $\Omega\in \beta$
+	
+	\item $\varnothing\in \beta$
+	
+	\item Если $A_1,\dots,A_n,\dots~\in \beta$, то $A_1,\cdot...\cdot,A_n,\cdot\dots~\in \beta$
+	
+	\item Если $A, B\in \beta$, то $A\backslash B\in \beta$
+	
+	\item [] Доказательства
+	
+	\setcounter{enumi}{0}
+	
+	\item Т.к. $\beta\neq\varnothing$, то произв. мн-во $A\in \beta$. 
+	\item [] В силу 1\degree опр-я $\overline{A}\in \beta$. 
+	\item [] В силу 2\degree $\Omega = A+\overline{A}\in \beta$
+	
+	\item $\Omega\in \beta\Rightarrow\varnothing = \overline{\Omega}\in \beta$
+	
+	\item $A_1 ... A_n ... ~ \in \beta \stackrel{\text{опр.}}{\Rightarrow}\overline{A_1},...,\overline{A_n},... ~ \in \beta \stackrel{\text{опр.}}{\Rightarrow}\overline{A_1},+...+,\overline{A_n},+... ~ \in$
+	\item [] $\in\beta\stackrel{\text{опр.}}{\Rightarrow}\overline{\overline{A_1},+...+,\overline{A_n},+...} ~ \in \beta\stackrel{\text{закон де Моргана}}{\Rightarrow}A_1\cdot...\cdot A_n \cdot... ~ \in B$ 
+	
+	\item $A\backslash B = A\cdot\overline{B}$
+	\item [] $A\in \beta,~ B\in \beta\Rightarrow A\in \beta, \overline{B}\in \beta\Rightarrow A\cdot\overline{B}\in \beta$
+\end{enumerate}
+
+\subsubsection*{2. Аксиоматическое определение вероятности}
+
+Пусть 
+
+1) $\Omega$ -- пр-во элемент. исходов 
+
+2) $\beta$ -- нек. сигма-алг. событий
+
+\OPR Вероятностью (вер. мерой) наз. ф-ию $P:\beta\rightarrow\mathbb{R}$, которая обладает:
+\begin{enumerate}[topsep=0pt, leftmargin=20pt, noitemsep, label=\arabic*\degree]
+	\item Аксиома неотрицательности $\forall A\in \beta~P(A)\geq 0$
+	
+	\item Аксиома нормированности $P(\Omega) = 1$
+	
+	\item Аксиома сложения для любой последовательности событий $A_1,...,A_n\in \beta$, которые попарно несовместны: $P(A_1+...+A_n+..)=P(A_1)+...+P(A_n)+...$
+	
+\end{enumerate}
+
+\clearpage

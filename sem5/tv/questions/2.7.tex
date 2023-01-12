@@ -1,0 +1,93 @@
+\specsection{2.7 Сформулировать определение пары независимых случайных величин. Доказать свойства
+независимых случайных величин. Понятия попарно независимых случайных величин и случайных
+величин, независимых в совокупности.}
+
+\OPR Случайные величины
+$X$ и $Y$ называются независимыми, если $F(x,y) = F_X(x)F_Y(y)$, где $F$ -- совместная функция распределения, $F_X,F_Y$ -- маргинальные функции распределения случайных
+величин $X$ и $Y$
+
+Свойства независимых случайных величин
+\begin{enumerate}[topsep=0pt, leftmargin=20pt, noitemsep, label=\arabic*\degree]
+	\item Сл. вел. $X$ и $Y$ независимы $\Leftrightarrow\fforall x,y\in \R$ события $\{X < x\}$ и $\{Y < y\}$ независимы
+	
+	\item Сл. вел. $X$ и $Y$ независимы $\Leftrightarrow\fforall x_1,x_2\in \R~~\fforall y_1,y_2\in \R$ 
+	\item [] события $\{x_1 < X < x_2\}$ и $\{y_1 < Y < y_2\}$ независимы
+	
+	\item Сл. вел. $X$ и $Y$ независимы $\Leftrightarrow\fforall M_1,M_2$ события $\{X\in M_1\}$ и $\{Y\in M_2\}$ независимы
+	\item [] где $M_1,M_2$ промежутки или объединения промежутков в $\R$
+	
+	\item Если $X,Y$ -- дискр. сл. вел., то $X,Y$ нез. $\Leftrightarrow P\{(X,Y)=(x_i,y_j)\}=$
+	\item [] $=P\{X=x_i\}P\{Y=y_j\}$ для всех $i,j$
+	
+	\item Если $X,Y$ непрер. сл. вел., то $X,Y$ нез. $\Leftrightarrow f(x,y)=f_X(x)f_Y(y)$, где
+	\item [] $f$ -- совместная плотность распред., $f_X,f_Y$ -- маргинальные плотности распред.
+	
+	\item [] Доказательства
+	\setcounter{enumi}{0}
+	
+	\item Следует из определения
+	
+	\item \NEOB
+	\item [] Пусть $X,Y$ нез. $\Rightarrow F(x,y)=F_X(x)F_Y(y)$
+	\item [] По св-ву двумерной функции распределения:
+	\item [] $P\{x_1\leq X<x_2,y_1 \leq Y<y_2\}=F(x_1,y_1)+F(x_2,y_2)-F(x_1,y_2)-F(x_2,y_1)=$
+	\item [] $=F_X(x_1)F_Y(y_1) + F_X(x_2)F_Y(y_2) - F_X(x_1)F_Y(y_2)- F_X(x_2)F_Y(y_1)=$
+	\item [] $=[F_X(x_2)-F_X(x_1)][F_Y(y_1)-F_Y(y_2)]\stackrel{\text{св. одном. ф-ии распр.}}{=}\footnotesize{P\{x_1\leq X<x_2\}P\{y_1\leq Y<y_2\}}$
+	\item [] \DOST
+	\item [] Пусть $\fforall x_1,x_2,y_1,y_2\in\R$ события $\{x_1\leq X<x_2\}$ и $\{y_1\leq Y<y_2\}$ независимы
+	\item [] $F(x,y)=P\{X<x,Y<y\}=P\{-\infty \leq X<x,-\infty \leq Y < y\}=$
+	\item [] $=P\{-\infty \leq X<x\}P\{-\infty \leq Y<y\}=P\{X<x\}P\{Y<y\}=F_X(x)F_Y(y)$
+	
+	\item является обобщением свойства 1\degree и 2\degree ~(без док-ва)
+	
+	\item \DOST
+	\item [] Была доказана выше, в рассуждениях перед определением независимых сл. вел.
+	
+	\clearpage
+	\item [] \NEOB
+	\item [] Рассмотрим дискретный сл. вектор $X,Y$, у которого конечное мн-во значений: 
+	\item [] $X\in\{x_1,...,x_m\},Y\in\{y_1,...,y_n\}$
+	\item [] $X,Y$ нез., если $P\{(X,Y)=(x_i,y_j)\}=P\{X=x_i\}P\{Y=y_j\}$
+	\item [] $F(x,y)=P\{X<x,Y<y\}=P\{X\in\{x_1,...,x_k\},Y\in\{y_1,...,y_l\}\}=$
+	\item [] $=P\{(X,Y)\in \{(x_i,y_j):~i=\overline{1,k},j=\overline{1,l}\}\}=
+			 \suml_{i=1}^k\suml_{j=1}^l P\{(X,Y)=(x_i,y_j)=$
+	\item [] $=\suml_{i=1}^k\suml_{j=1}^l P\{X=x_i\}P\{Y=y_j\}=
+			 (\suml_{i=1}^kP\{X=x_i\})(\suml_{i=1}^kP\{Y=y_j\})=$
+	\item [] $=P\{X\in\{x_1,...,x_k\}\}P\{Y\in\{y_1,...,y_l\}\}=F_X(x)F_Y(y)$
+	
+	\item \NEOB
+	\item [] Пусть $X,Y$ - независимые, тогда $F(x,y)=F_X(x)F_Y(y)$
+	\item [] $f(x,y)=\tfrac{\delta^2 F(x,y)}{\dd{x}\dd{y}}=\tfrac{\delta^2}{\dd{x}\dd{y}}[F_X(x)F_Y(y)]=[\tfrac{\delta}{\dd{x}}F_X(x)][\tfrac{\delta}{\dd{y}}F_Y(y)]=f_X(x)F_Y(y)$
+	\item [] \DOST
+	\item [] Пусть $f(x,y)=f_X(x)F_Y(y)$. Тогда: $F(x,y)=\intl_{-\infty}^{x}dt\intl_{-\infty}^{y}f(t,v)dv=$
+	\item [] $=\intl_{-\infty}^{x}dt\intl_{-\infty}^{y}f_X(t)f_Y(v)dv=\intl_{-\infty}^{x}f_X(t)dt\intl_{-\infty}^{y}f_Y(v)dv=F_X(x)F_Y(y)$
+\end{enumerate}
+
+~
+
+\OPR Сл. величины $X_1,...,X_n$ заданные на одном вероятностном пространстве наз.:
+
+-- Попарно независимыми, если
+$X_i$ и $X_j$ независимы при $i\neq j$
+
+-- Независимыми в совокупности, если
+$F(x_1,...,x_n)=F_{X_1}(x_1)\cdot...\cdot F_{X_n}(x_n)$, где
+
+$F$ -- совместная функция распределения случайного вектора
+$(X_1,...,X_n)$
+
+$F_{X_i}(x_i)$ -- маргинальная ф-ия распределения компонент
+
+~
+
+\ZAM 
+
+1) Если $X_1,...,X_n$ независимы в совокупности, то они нез. попарно. Обратное неверно.
+
+2) Обобщения свойств 4\degree ~и 5\degree ~будут справедливы для любого числа
+$n$
+случайных величин, независимых в совокупности. К примеру, обобщение свойства 5\degree:
+
+$X_1,...,X_n$ -- нез. в совокупности $\Leftrightarrow f(x_1,...,x_n)=f_{X_1}(x_1)\cdot...\cdot f_{X_n}(x_n)$
+
+\clearpage

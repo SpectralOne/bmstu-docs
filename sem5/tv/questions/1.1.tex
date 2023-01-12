@@ -1,0 +1,111 @@
+\specsection{1.1 Определение пространства элементарных исходов, примеры. Понятие события(нестрогое), следствие события, невозможное и достоверное событие, примеры. Операции над событиями. Сформулировать классическое определение вероятности и доказать его следствия.}
+
+\subsubsection*{1. Пространство событий. Понятия событий.}
+\OPR Случайным экспериментом называется эксперимент, результат которого невозможно заранее предсказать.
+
+\OPR Каждый неделимый результат случ. экспер. называют элементарным исходом.
+
+\OPR Мн-во всех элементарных исходов случайной величины $\Omega$ называется пространством элементарных исходов.
+
+\PRIM
+\begin{enumerate}[topsep=0pt, leftmargin=18pt, noitemsep]
+	\item Бросаем монету. Возможные исходы: \texttt{O} или \texttt{P}.~~ $\Omega = \{\texttt{O},~\texttt{P}\}~~|\Omega|=2$
+	
+	\item Из колоды в 36 карт последовательно извлекают 2 карты.~~ 
+	$\Omega=\{(x_1,x_2):~x_1,x_2\in \{1,\dots,36\},~x_1\neq x_2\}$, $x_i$ -- 
+	номер карты при $i$-ом извлечении.~~$|\Omega|=36\cdot 35$
+\end{enumerate}
+
+В результате случайного эксперимента, проведённого однократно, обязательно реализуется один из элементарных исходов.
+
+\OPR (нестрогое) Событием (случайным событием) в рамках данного случайного эксперимента называется любое подмножество пространства элементарных исходов $\Omega$ этого эксперимента.
+
+При этом говорят, что в результате случайного эксперимента (СЭ) наступило событие А, если имел место один из входящих в А элементарных исходов.
+
+\OPR Событие $B$ наз. следствием события $A$, если из того, что произошло $A$ следует, что произошло $B$. ~$B\subseteq A$
+
+\ZAM Любое мн-во $\Omega$ содержит два подмн-ва: $\varnothing$, $\Omega$. Соотв. события называются \B{невозможными} ($\varnothing$) и \B{достоверными} ($\Omega$). Эти события наз. несобственными, остальные -- собственными.
+
+\PRIM Из урны с 2 белыми и 1 чёрным шарами достают наугад 1 шар:
+
+$A$ = \{Извлечённый шар красный\} = $\varnothing$
+
+$B$ = \{Извлечённый шар чёрный или белый\} = $\Omega$
+
+\subsubsection*{2. Операции над событиями}
+
+События являются множествами $\Rightarrow~\cup~\cap~\bar~~\backslash~\triangle$
+
+Используется следующая терминология:
+\begin{enumerate}[topsep=0pt, leftmargin=18pt, noitemsep]
+	\item $A \cup B = A + B$ -- сумма событий
+	
+	\item $A \cap B = A \cdot B$ -- произведение событий
+	
+	\item $A ~\backslash~ B$ -- разность событий
+	
+	\item $\overline{A}=\Omega~\backslash~ A$ -- дополнение события $A$
+\end{enumerate}
+
+Основные свойства этих операций, известны из курса дискретной математики.
+
+Св-ва операций над событиями
+\begin{enumerate}[topsep=0pt, leftmargin=20pt, noitemsep, label=\arabic*\degree]
+	\item $A+B=B+A$
+	
+	\item $A \cdot B = B \cdot A$
+	
+	\item $(A+B)+C=A+B+C$
+	
+	\item $(A\cdot B)\cdot C = A\cdot(B\cdot C)$
+	
+	\item $A+A=A$
+	
+	\item $A\cdot A = A$
+	
+	\item $A\cdot (B+C) = A\cdot B + A\cdot C$
+	
+	\item $A+(B\cdot C) = A + B\cdot C$
+	
+	\item $\overline{(\overline{A})} = A$
+	
+	\item $\overline{A+B} = \overline{A}\cdot\overline{B}$
+	
+	\item $\overline{A\cdot B} = \overline{A} + \overline{B}$
+	
+	\item $A\subseteq B \Leftrightarrow AB = A$
+	
+	\item $A\subseteq B \Leftrightarrow A+B=B$
+	
+	\item $A\subseteq B \Leftrightarrow \overline{B}\subseteq\overline{A}$
+\end{enumerate}
+
+\subsubsection*{3. Классическое определение вероятности}
+Пусть 1) $|\Omega|=N < \infty$
+
+2) По условиям эксперимента нет объективных оснований предпочесть какой-нибудь элементарный исход остальным (элем. исходы равновероятны)
+
+\OPR Вероятностью осуществления события $A\subseteq\Omega$ называют число $P(A)=\tfrac{N_A}{N}$, где $N_A=|A|$\newline
+
+Свойства вероятности (из класс. определения)
+\begin{enumerate}[topsep=0pt, leftmargin=20pt, noitemsep, label=\arabic*\degree]
+	\item $P(A) \geq 0$
+	
+	\item $P(\Omega) = 1$
+	
+	\item Если $A$ и $B$ -- несовместные события ($AB=\varnothing$), то $P(A+B)=P(A)+P(B)$
+	
+	\item [] Доказательства
+	
+	\setcounter{enumi}{0}
+	
+	\item $P(A) = \frac{N_A}{N}, ~N_A\geq 0,~N>0\Rightarrow P(A) \geq 0$
+	
+	\item $P(\Omega)=\frac{|\Omega|}{N}=\frac{N}{N}=1$
+	
+	\item По формуле включений и исключений: $|A+B|=|A|+|B|-|AB|=|A|+|B|$. 
+	\item [] То $N_{A+B} = N_A + N_B$ и $P(A+B)=\frac{N_{A+B}}{N}=\frac{N_A+N_B}{N}=P(A)+P(B)$
+\end{enumerate}
+
+\clearpage
+

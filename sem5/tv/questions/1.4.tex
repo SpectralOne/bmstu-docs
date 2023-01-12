@@ -1,0 +1,107 @@
+\specsection{1.4 Определение пространства элементарных исходов, примеры. Сформулировать определение
+сигма-алгебры событий. Сформулировать аксиоматическое определение вероятности и доказать
+простейшие свойства вероятности}
+
+\subsubsection*{1. Пространство событий. Понятия событий. Сигма алгебра}
+
+\OPR Случайным экспериментом называется эксперимент, результат которого невозможно заранее предсказать.
+
+\OPR Каждый неделимый результат случ. экспер. называют элементарным исходом.
+
+\OPR Мн-во всех элементарных исходов случайной величины $\Omega$ называется пространством элементарных исходов.
+
+\PRIM
+\begin{enumerate}[topsep=0pt, leftmargin=18pt, noitemsep]
+	\item Бросаем монету. Возможные исходы: \texttt{O} или \texttt{P}.~~ $\Omega = \{\texttt{O},~\texttt{P}\}~~|\Omega|=2$
+	
+	\item Из колоды в 36 карт последовательно извлекают 2 карты.~~ 
+	$\Omega=\{(x_1,x_2):~x_1,x_2\in \{1,\dots,36\},~x_1\neq x_2\}$, $x_i$ -- 
+	номер карты при $i$-ом извлечении.~~$|\Omega|=36\cdot 35$
+\end{enumerate}
+
+Пусть 1) $\Omega$ -- пространство элементарных исходов некоторого СЭ 2) $\beta\neq\varnothing$ -- некоторый набор подмножеств в множестве $\Omega$
+
+\OPR $\beta$ наз. сигма-алгеброй, если
+
+1) $A\in\beta\Rightarrow\overline{A}\in\beta$ 
+
+2) $A_1,\dots,A_n,\dots~\in \beta\Rightarrow A_1+...+A_n+\dots~\in \beta$
+
+Свойства
+\begin{enumerate}[topsep=0pt, leftmargin=20pt, noitemsep, label=\arabic*\degree]
+	\item $\Omega\in \beta$
+	
+	\item $\varnothing\in \beta$
+	
+	\item Если $A_1,\dots,A_n,\dots~\in \beta$, то $A_1,\cdot...\cdot,A_n,\cdot\dots~\in \beta$
+	
+	\item Если $A, B\in \beta$, то $A\backslash B\in \beta$
+\end{enumerate}
+
+\subsubsection*{2. Аксиоматическое определение вероятности}
+
+Пусть
+
+1) $\Omega$ -- пр-во элемент. исходов 
+
+2) $\beta$ -- нек. сигма-алг. событий
+
+\OPR Вероятностью (вер. мерой) наз. ф-ию $P:\beta\rightarrow\mathbb{R}$, которая обладает:
+\begin{enumerate}[topsep=0pt, leftmargin=20pt, noitemsep, label=\arabic*\degree]
+	\item Аксиома неотрицательности $\forall A\in \beta~P(A)\geq 0$
+	
+	\item Аксиома нормированности $P(\Omega) = 1$
+	
+	\item Аксиома сложения для любой последовательности событий $A_1,...,A_n\in \beta$, которые попарно несовместны: $P(A_1+...+A_n+..)=P(A_1)+...+P(A_n)+...$
+	
+\end{enumerate}
+
+\clearpage
+
+\subsubsection*{3. Свойства вероятности}
+
+Свойства вероятности
+\begin{enumerate}[topsep=0pt, leftmargin=20pt, noitemsep, label=\arabic*\degree]
+	\item $P(\overline{A})= 1 - P(A)$
+	
+	\item $P(\varnothing) = 0$
+	
+	\item Если $A\subseteq B$, то $P(A) \leq P(B)$
+	
+	\item $\forall A\in B~~ 0\leq P(A) \leq 1$
+	
+	\item $P(A+B)=P(A)+P(B)-P(AB)$
+	
+	\item Если $A_1,...,A_n\in B$, то $P(A_1+...+A_n)=$
+	\item [] $= \suml_{1\leq i_1\leq n}P(A_{i1})-\suml_{1\leq i_1<i_2\leq n}P(A_{i1}A_{i2})+...+(-1)^{n+1}P(A_i...A_n)$ (th сложения)
+	
+	\item [] Доказательства
+	
+	\setcounter{enumi}{0}
+	
+	\item $\Omega = A+\overline{A},~A\overline{A}=\varnothing$
+	\item [] $P(\Omega) \stackrel{\text{акс}~2\degree}{=} 1$
+	\item [] $P(A+\overline{A}) \stackrel{\text{акс}~3\degree}{=} P(A)+P(\overline{A})$
+	\item [] $P(A)+P(\overline{A})=1\Rightarrow P(\overline{A})=1-P(A)$
+	
+	\item $\varnothing = \overline{\Omega}$
+	\item [] по предыдущему св-ву $P(\varnothing) = 1-P(\Omega)\stackrel{\text{акс}~2\degree}{=} 1-1 =0$
+	
+	\item $B=A+(B\backslash A)$
+	\item [] Т.к. $A(B\backslash A) = \varnothing \stackrel{\text{акс}~3\degree}{\Rightarrow} P(B)=P(A)+P(B\backslash A)\geq P(A)$
+	
+	\item $P(A) \stackrel{\text{акс}~1\degree}{\geq} 0$
+	\item [] Осталось доказать, что $P(A)\leq 1$
+	\item [] $A\subseteq\Omega \stackrel{\text{акс}~3\degree}{\Rightarrow} P(A)\leq P(\Omega) = 1$
+	
+	\item ~
+	\item [a)] $A+B=A+(B\backslash A)~~$
+	\item [] $A(B\backslash A) = \varnothing \stackrel{\text{акс}~3\degree}{\Rightarrow} P(A+B)=P(A)+P(B\backslash A)$
+	\item [б)] $B = (B\backslash A) + AB$
+	\item [] т.к. $(B\backslash A)(AB)=\varnothing$, то $P(B)=P(B\backslash A) + P(AB)\Rightarrow P(B\backslash A) = P(B) - P(AB)$
+	\item [в)] $P(A+B)=P(A)+P(B)-P(AB)$
+	
+	\item является следствием 5\degree~ и доказывается анал. формуле включений и исключений
+\end{enumerate}
+
+\clearpage

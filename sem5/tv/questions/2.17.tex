@@ -1,0 +1,43 @@
+\specsection{2.17 Понятие $n$-мерного нормального распределения. Сформулировать основные свойства многомерного нормального распределения.}
+
+\OPR Сл. век-р $(X_1,...,X_n)$ имеет нормальное распределение, если его ф-ия плотности распределения имеет вид:
+
+$f(x_1,...,x_n)=\tfrac{1}{(\sqrt{2\pi})^n\sqrt{det\sum}}e^{-\tfrac{1}{2}Q(\overrightarrow{x}-\overrightarrow{m})}$, где
+
+$\overrightarrow{ч}=(x_1,...,x_n)$
+
+$\overrightarrow{m}=(m_1,...,m_n)$
+
+$Q(\overrightarrow{\alpha})=\overrightarrow{\alpha}\cdot\suml^{\sim}\overrightarrow{\alpha}^T$ квадр форма от $n$ перем., $\suml^{\sim}=\sum^{-1}$
+
+$~\overrightarrow{\alpha}=(\alpha_1,...,\alpha_n)$
+
+$\sum$ -- положительно опред. матрица порядка $n$
+
+~
+
+Свойства многомерного нормального распределения
+\begin{enumerate}[topsep=0pt, leftmargin=20pt, noitemsep, label=\arabic*\degree]
+	\item Если $(x_1,...,x_n)$ -- норм. сл. век-р, то существует его компонента \item [] $x_i\sim N(m_i,\sigma_i^2)$ -- тоже норм. сл. вел.
+	
+	\item Пусть $\overrightarrow{x}\sim N(\overrightarrow{m},\sum)$
+	\item [] Тогда, если $\sum$ диагональная, то сл. вел. $x_1,...,x_n$ независимы
+	
+	\item Пусть $\overrightarrow{x}\sim N(\overrightarrow{m},\sum)$ -- $n$-мерный сл. век-р
+	\item [] Тогда $\overrightarrow{x}'=(x_1,...,x_{n-1})$ норм. сл. век-р с $\overrightarrow{m}'=(m_1,...,m_{n-1})$ и ковариационной матрицей
+	$\sum'$, которая получена из $\sum$ отбрасыванием последней строчки и столбца
+
+	\item Пусть $\overrightarrow{x}\sim N(\overrightarrow{m},\sum), ~~ \overrightarrow{Y}=\lambda_1x_1+...+\lambda_n x_n+\lambda_0$
+	\item [] Тогда $\overrightarrow{Y}$ -- норм. сл. вел
+	
+	\item Пусть $\overrightarrow{x}=(x_1,x_2)$ двумерный сл. век-р с $\overrightarrow{m}=(m_1,m_2)$ и $\sum = 
+	\left[\begin{array}{l}
+		\sigma_1^2 ~~\rho\sigma_1\sigma_2 \\
+		\rho\sigma_1\sigma_2 ~~\sigma_2^2
+	\end{array}\right]$
+	\item [] Тогда 1. Условное распределение $X$ при условии $Y=y$ будет нормальным
+	\item [] 2. $M[X|Y=y]=m_1+\rho\tfrac{\sigma_1}{\sigma_2}(y-m_2)~~D[X|Y=y]=\sigma_1^2(1-\rho^2)$
+	
+\end{enumerate}
+
+\clearpage

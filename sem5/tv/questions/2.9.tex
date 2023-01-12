@@ -1,0 +1,63 @@
+\specsection{2.9 Понятие функции скалярной случайной величины. Доказать теорему о формуле для вычисления плотности $f_Y(y)$ случайной величины $Y=\varphi(X)$, если $X$ -- непрерывная случайная величина, а $\varphi$ -- монотонная непрерывно дифференцируемая функция. Записать аналогичную формулу для
+кусочно-монотонной функции $\varphi$}
+
+Скалярная функция скалярного аргумента:
+
+Пусть $X$ -- некоторая сл. вел., $\varphi:\R\rightarrow\R$ -- некоторая известная ф-и. 
+
+Тогда $\varphi(X)=Y$ -- некоторая сл. вел
+
+\THRM Пусть
+\begin{enumerate}[topsep=0pt, leftmargin=20pt, noitemsep]
+	\item $X$ -- непрерывная случайная величина
+	
+	\item $f_X(x)$ -- плотность распределения сл. вел.
+	
+	\item $\varphi:\R\rightarrow\R$ -- монотонная ф-ия, которая непрер. дифф.
+	
+	\item $\psi$ -- ф-ия, обратная к $\varphi$
+	
+	\item $Y=\varphi(X)$
+	
+	\item [] Тогда
+	\setcounter{enumi}{0}
+	
+	\item $Y$ -- также является непрерывной сл. вел.
+
+	\item $f_Y(y)=f_X(\psi(y))|\psi'(y)|$
+	
+	\item [] Доказательство
+	\setcounter{enumi}{0}
+	
+	\item [] По опр. функции распределения $F_Y(y)=P\{Y<y\}=P\{\varphi(X)<y\}$
+	\item [] Т.к. $\varphi$ монотонная, то существует обратная к ней ф-ия $\varphi^{-1}=\psi$
+	\item []$
+	\begin{cases}
+		\text{монотоннно}\uparrow,  & F_Y(y)=P\{X<\psi(y)\}=F_X(\psi(y))\\
+		\text{монотоннно}\downarrow,  & F_Y(y)=P\{X>\psi(y)\}=1-P\{X\leq\psi(y)\}\stackrel{\text{X-непрер.}}{=}\\
+		~ & = 1-P\{X<\psi(y)\}=1-F_X(\psi(y))
+	\end{cases}$
+
+	\item []$
+	\begin{cases}
+		\text{монотоннно}\uparrow,  & \tfrac{d}{dy}[F_X(\psi(y))]=F'_X(\psi(y))\cdot\psi'(y)\\
+		\text{монотоннно}\downarrow,  & \tfrac{d}{dy}[1-F_X(\psi(y))]=-F'_X(\psi(y))\cdot\psi'(y)=f_X(\psi(y))\cdot|\psi'(y)|
+	\end{cases}$
+		
+\end{enumerate}
+
+~
+
+\THRM Пусть
+\begin{enumerate}[topsep=0pt, leftmargin=20pt, noitemsep]
+	\item $X$ -- непрерывная случайная величина
+	
+	\item $\varphi:\R\rightarrow\R$ -- кусочно монотонная ф-ия, имеющая $n$ интервалов
+	
+	\item $\varphi$ -- диффиринцируема
+	
+	\item Для данного $y\in\R,x_1=x_1(y),...,x_k=x_k(y)~(k\leq n)$ -- все решения уравнения $y=\varphi(x)$, принадл. инт. $I_1,...,I_k$. Тогда: $f_Y(y)=\suml_{i=1}^k f_X(\psi_i(y))\cdot|\psi'_i(y)|$, где
+	\item [] $\psi_i(y)$ -- ф-ия, обратная к $\varphi(x)$ на интервале $I_j,j=\overline{1,k}$
+\end{enumerate}
+
+\clearpage

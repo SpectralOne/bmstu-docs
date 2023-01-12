@@ -1,0 +1,56 @@
+\specsection{2.4 Сформулировать определение случайного вектора и функции распределения вероятностей
+случайного вектора. Сформулировать свойства функции распределения двумерного случайного
+вектора. Доказать предельные свойства.}
+
+Пусть $(\Omega, \beta, P)$ -- вероятностное пространство
+
+$x_1(\omega),...,x_n(\omega)$ - сл. вел. заданные на этом пространстве
+
+\OPR $n$-мерным случ. вектором наз. кортеж $\overrightarrow{x}=(x_1(\omega),...,x_n(\omega))$
+
+\OPR Ф-ей распределения $n$-мерного случ. вектора $(x_1,...,x_n)$ наз. отображение 
+
+$F:\R^n\rightarrow\R$, которое определено усл-м $F(x_1,...,x_n)=P\{X_1<x_1,...,X_n<x_n\}$
+
+Свойства двумерной функции распределения ($F(x,y)=P\{X<x, Y<y\}$)
+\begin{enumerate}[topsep=0pt, leftmargin=20pt, noitemsep, label=\arabic*\degree]
+	\item $0\leq F(x, y) \leq 1$
+	
+	\item при фикс. $x$ ф-ия $F(x, y)$ явл. неубыв. от $y$. при фикс. $y$ явл. неуб. от $x$
+	\item [] $F(x_2,y)\geq F(x_1,y)$, при $x_2>x_1$
+	\item [] $F(x,y_2)\geq F(x,y_1)$, при $y_2>y_1$
+		
+	\item $\liml_{\toinf[-]{x,y}}F(x, y) = 0$
+	
+	\item $\liml_{\toinf[+]{x,y}}F(x, y) = 1$
+	
+	\item $\liml_{\toinf[+]{y}}F(x,y)=F_{X}(x),~\liml_{\toinf[+]{x}}F(x,y)=F_{Y}(y)$
+		
+	\item $P\{a_1\leq x<b_1,~a_2\leq y<b_2\}=F(b_1,b_2)-F(a_1,b_2)-F(b_1,a_2)+F(a_1,a_2)$
+	
+	\item При фикс. $y, F(x,y)$, как ф-ия $x$ явл. непрерыв. слева во всех точках
+	\item [] При фикс. $x, F(x,y)$, как ф-ия $y$ явл. непрерыв. слева во всех точках
+	\item [] Доказательства
+	
+	\setcounter{enumi}{0}
+	
+	\item $F(x,y)=P\{X < x, Y < y\}\Rightarrow0\leq F(x,y)\leq 1$
+
+	\item не нужно доказывать. НО:
+	\item [] власов может спросить: $\lim\limits_{x\rightarrow const, \toinf[-]{y}} F(x, y)=~?$, что такое фиксация слева?
+	\item [] $\lim\limits_{x\rightarrow const, \toinf[-]{y}} F(x,y )~=P\{const < x\}\cdot\underbrace{\{Y < -\infty\}}_{\text{невозможн. событие}} = 0$
+	
+	\item Рассмотрим событие $\{X<x\}\cdot\underbrace{\{Y < -\infty\}}_{\text{невозможн. событие}}\Rightarrow\{X<x\}\cdot\{Y<-\infty\}$ -- невозможно $\Rightarrow F(x,-\infty)=P\{X<x,Y<-\infty\}=0$. ~для $y$ аналогично
+	
+	\item Рассмотрим событие $\{X<+\infty\}\cdot\{Y<y\} \stackrel{\text{оба события достоверны}}{\Rightarrow}\{X<+\infty\}\cdot\{Y<y\}$ -- достоверно $\Rightarrow F(+\infty, y)=\{X<+\infty\}\cdot\{Y<y\} = 1$. ~для $y$ аналогично
+	
+	\item Событие $\{y<+\infty\}\stackrel{\text{явл. достоверным}}{\Rightarrow}\{X<x\}\cdot\{Y<+\infty\}=\{X<x\}$
+	\item [ ] Тогда $F(x, +\infty)= P\{X<x,\}=F_{X}(x)$. ~для $y$ аналогично
+	
+	\item не нужно
+	
+	\item не нужно, но можно доказать аналогично одномерному случаю	
+\end{enumerate}
+
+
+\clearpage
